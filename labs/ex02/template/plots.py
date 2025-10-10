@@ -86,5 +86,6 @@ def gradient_descent_visualization(
         ws_to_be_plotted[-1, 0], ws_to_be_plotted[-1, 1], mean_x, std_x
     )
     ax2.plot(pred_x, pred_y, "r")
+    plt.show()
 
     return fig

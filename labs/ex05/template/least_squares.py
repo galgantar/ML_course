@@ -14,4 +14,7 @@ def least_squares(y, tx):
     # least squares: TODO
     # returns mse, and optimal weights
     # ***************************************************
-    raise NotImplementedError
+    w = np.linalg.solve(tx.T @ tx, tx.T @ y)
+    e = y - tx @ w
+    mse = (e ** 2).mean() / 2
+    return w, mse

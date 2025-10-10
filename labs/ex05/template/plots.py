@@ -51,7 +51,7 @@ def visualization(y, x, mean_x, std_x, w, save_name, is_LR=False):
     prediction = prediction.reshape((weight.shape[0], height.shape[0]))
     cs = ax2.contourf(hx, hy, prediction, 1)
     proxy = [
-        plt.Rectangle((0, 0), 1, 1, fc=pc.get_facecolor()[0]) for pc in cs.collections
+        plt.Rectangle((0, 0), 1, 1, fc=pc.get_facecolor()[0]) for pc in cs.get_children()
     ]
     ax2.legend(proxy, ["prediction male", "prediction female"])
 

@@ -19,4 +19,17 @@ def compute_loss(y, tx, w):
     # INSERT YOUR CODE HERE
     # TODO: compute loss by MSE
     # ***************************************************
-    raise NotImplementedError
+    
+    e = y - tx @ w
+    return (e ** 2).mean() / 2
+
+def compute_mse(y, tx, w):
+    """Compute the mean squared error.
+
+    Args:
+        y: shape=(N, )
+        tx: shape=(N,2)
+        w: shape=(2,). The vector of model parameters.
+    """
+    e = y - tx @ w
+    return (e ** 2).mean() / 2

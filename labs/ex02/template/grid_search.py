@@ -26,3 +26,11 @@ def get_best_parameters(w0, w1, losses):
 # TODO: Paste your implementation of grid_search
 #       here when it is done.
 # ***************************************************
+
+def grid_search(y, tx, grid_w0, grid_w1):
+    """Grid search function."""
+    losses = np.zeros((len(grid_w0), len(grid_w1)))
+    for i, w0 in enumerate(grid_w0):
+        for j, w1 in enumerate(grid_w1):
+            losses[i, j] = compute_loss(y, tx, [w0, w1])
+    return losses
