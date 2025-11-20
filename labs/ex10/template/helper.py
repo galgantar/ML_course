@@ -47,3 +47,10 @@ def build_distance_matrix(data, mu):
     ####################################
     ### ___ Enter your code here ___ ###
     ####################################
+    data_expanded = data[:, np.newaxis, :]
+    mu_expanded = mu[np.newaxis, :, :]
+    
+    squared_diff = (data_expanded - mu_expanded) ** 2
+    distance_matrix = np.sum(squared_diff, axis=2)
+    
+    return distance_matrix
